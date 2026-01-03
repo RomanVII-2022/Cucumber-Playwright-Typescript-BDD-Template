@@ -4,8 +4,8 @@ Feature: Customer login.
 @regression
 Scenario: Login with wrong credentials.
 Given customer navigates to the login url
-When customer provides wrong 'something' as username
-And provides wrong 'something' as password
+When customer provides wrong 'username' as username
+And provides wrong 'password' as password
 Then error message is shown
 
 @smoke

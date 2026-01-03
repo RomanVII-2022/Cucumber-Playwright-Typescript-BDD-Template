@@ -1,4 +1,4 @@
-import { BeforeAll, AfterAll, Before, After } from '@cucumber/cucumber';
+import { BeforeAll, AfterAll, Before, After, Status } from '@cucumber/cucumber';
 import browserContextConfig from './webConfig';
 
 BeforeAll(async function () {
@@ -9,7 +9,11 @@ Before(async function () {
 	await browserContextConfig.createContextAndPage();
 });
 
-After(async function () {
+After(async function (scenario) {
+	if (scenario.result?.status === Status.FAILED) {
+		const screenshot = await browserContextConfig.page.screenshot();
+		await this.attach(screenshot, 'image/png');
+	}
 	await browserContextConfig.closeBrowserContext();
 });
 
