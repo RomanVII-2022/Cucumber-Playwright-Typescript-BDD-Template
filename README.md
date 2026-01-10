@@ -43,7 +43,6 @@ A starter template that uses Page Object model (POM) for writing E2E tests based
 ├── screenshots/                  # Screenshots captured on failures
 │
 ├── allure-results/               # Allure raw results (generated)
-├── allure-report/                # Allure HTML report (generated)
 │
 ├── .husky/                       # Git hooks (pre-commit, commit-msg)
 │
