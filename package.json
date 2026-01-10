@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cucumber-js test",
     "test:failed": "cucumber-js -p rerun ./@rerun.txt",
-    "allure": "pnpm allure serve allure-results",
+    "allure": "pnpx allure serve allure-results",
     "lint": "eslint .",
     "prepare": "husky",
     "format": "prettier . --write"
