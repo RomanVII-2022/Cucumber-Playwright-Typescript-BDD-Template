@@ -1,34 +1,44 @@
 {
-	"name": "cucumber",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "cucumber-js test",
-		"test:failed": "cucumber-js -p rerun ./@rerun.txt",
-		"allure": "pnpx allure serve allure-results"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"packageManager": "pnpm@10.13.1",
-	"devDependencies": {
-		"@cucumber/cucumber": "^12.5.0",
-		"@cucumber/messages": "^31.1.0",
-		"@eslint/js": "^9.39.2",
-		"@playwright/test": "^1.57.0",
-		"@types/node": "^25.0.3",
-		"@typescript-eslint/eslint-plugin": "^8.52.0",
-		"@typescript-eslint/parser": "^8.52.0",
-		"allure": "^3.0.0",
-		"allure-cucumberjs": "^3.4.3",
-		"allure-js-commons": "^3.4.3",
-		"dotenv": "^17.2.3",
-		"eslint": "^9.39.2",
-		"eslint-plugin-playwright": "^2.4.0",
-		"globals": "^17.0.0",
-		"jiti": "^2.6.1",
-		"ts-node": "^10.9.2",
-		"typescript-eslint": "^8.52.0"
-	}
+  "name": "cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test",
+    "test:failed": "cucumber-js -p rerun ./@rerun.txt",
+    "allure": "pnpm allure serve allure-results",
+    "lint": "eslint .",
+    "prepare": "husky",
+    "format": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.5.0",
+    "@cucumber/messages": "^31.1.0",
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "allure": "^3.0.0",
+    "allure-cucumberjs": "^3.4.3",
+    "allure-js-commons": "^3.4.3",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.2",
+    "eslint-plugin-playwright": "^2.4.0",
+    "globals": "^17.0.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.52.0"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,mjs,cjs,json,md,yml,yaml}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
 }
