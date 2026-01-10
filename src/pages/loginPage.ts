@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
+import { logger } from '../utils/loggerUtil';
 
 class Loginpage {
   private readonly loginNameElement: Locator;
@@ -14,25 +15,30 @@ class Loginpage {
   }
 
   async navigateTo(url: string) {
+    logger.info('Navigating to' + ' -- ' + url);
     await this.page.goto(url);
   }
 
   async enterLoginName(name: string) {
     await this.loginNameElement.fill(name);
+    logger.info('Login name was entered successfully');
   }
 
   async enterPassword(password: string) {
     await this.passwordElement.fill(password);
+    logger.info('Password was entered successfully');
   }
 
   async clickLogin() {
     await this.loginBtnElement.click();
+    logger.info('Login button was clicked successfully');
   }
 
   async userLogin(name: string, password: string) {
     await this.enterLoginName(name);
     await this.enterPassword(password);
     await this.clickLogin();
+    logger.info('Login was successfull');
   }
 
   async assertErrorMessage(message: string) {

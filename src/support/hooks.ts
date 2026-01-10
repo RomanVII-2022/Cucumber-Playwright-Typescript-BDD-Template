@@ -5,8 +5,8 @@ BeforeAll(async function () {
   await browserContextConfig.launchBrowser();
 });
 
-Before(async function () {
-  await browserContextConfig.createContextAndPage();
+Before(async function (scenario) {
+  await browserContextConfig.createContextAndPage(scenario.pickle.name);
 });
 
 After(async function (scenario) {
