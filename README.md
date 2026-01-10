@@ -17,6 +17,50 @@ A starter template that uses Page Object model (POM) for writing E2E tests based
 9. Prettier, ESLint, Husky configuration
 10. CI/CD using GitHub Actions
 
+## Project Structure
+
+```
+.
+├── src/
+│   ├── features/                 # Gherkin feature files
+│   │   └── *.feature
+│   │
+│   ├── steps/                    # Step definitions
+│   │   └── *.steps.ts
+│   │
+│   ├── pages/                    # Page Object Model (POM)
+│   │   └── *.page.ts
+│   │
+│   ├── support/                  # Test lifecycle & configuration
+│   │   ├── hooks.ts              # Before / After hooks
+│   │   ├── webConfig.ts          # Custom World for Cucumber
+│   │
+│   │
+│   │
+│   └── utils/                    # Shared helpers & utilities
+│       └── *.ts
+│
+├── screenshots/                  # Screenshots captured on failures
+│
+├── allure-results/               # Allure raw results (generated)
+├── allure-report/                # Allure HTML report (generated)
+│
+├── .husky/                       # Git hooks (pre-commit, commit-msg)
+│
+├── .env                          # Environment variables
+├── cucumber.js                   # Cucumber configuration
+├── playwright.config.ts          # Playwright configuration
+├── tsconfig.json                 # TypeScript configuration
+├── eslint.config.mts             # ESLint flat config
+├── .prettierrc                   # Prettier configuration
+├── .prettierignore
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── badge.svg                     # Status badge
+└── report.png                    # Sample Allure report
+```
+
 ## Usage
 
 Create a repo based on this template and start writing your tests.
