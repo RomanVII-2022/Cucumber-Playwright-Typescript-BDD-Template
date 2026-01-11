@@ -21,10 +21,14 @@ class BrowserContextConfig {
       throw new Error(`Unsupported browser: ${browserName}. Use chromium | firefox`);
     }
 
-    this.browser = await browserType.launch({
-      headless: false,
-      args: browserName === 'chromium' ? ['--start-maximized'] : [],
-    });
+    // --- Headed Browser ---
+    // this.browser = await browserType.launch({
+    //   headless: false,
+    //   args: browserName === 'chromium' ? ['--start-maximized'] : [],
+    // });
+
+    // --- Headless Browser ---
+    this.browser = await browserType.launch();
 
     logger.info('Browser launced successfully');
   }
