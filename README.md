@@ -76,15 +76,19 @@ Create a repo based on this template and start writing your tests.
 
         pnpm install
 
-3.  Run all tests
+3.  Install playwright browsers
+
+        pnpm exec playwright install --with-deps
+
+4.  Run all tests
 
         pnpm test
 
-4.  Run tests with a specific tag
+5.  Run tests with a specific tag
 
         pnpm test --tags <tag>
 
-5.  To ignore a scenario tag the scenario with @ignore
+6.  To ignore a scenario tag the scenario with @ignore
 
 ## How to select browser
 
