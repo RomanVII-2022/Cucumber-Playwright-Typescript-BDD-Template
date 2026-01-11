@@ -1,9 +1,7 @@
-name: Playwright Tests
+name: Cucumber Playwright Tests
 on:
   push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+    branches: main
 jobs:
   test:
     timeout-minutes: 60
@@ -18,7 +16,7 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
-        run: pnpm exec playwright test
+        run: pnpm test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
