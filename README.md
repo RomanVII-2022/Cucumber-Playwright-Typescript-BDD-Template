@@ -66,6 +66,12 @@ Create a repo based on this template and start writing your tests.
 
 > _Note: When creating the template I used pnpm_
 
+1. Click on the Use this template button
+
+!["Use this teplate button"](./template.png)
+
+2.  Click on Create a new repository
+
 ## How to run your tests
 
 1.  Ensure you are in the root directory of your project
